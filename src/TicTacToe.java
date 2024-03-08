@@ -13,8 +13,6 @@ public class TicTacToe {
     public static final Pieces player1 = Pieces.X;    //First player will be use X
     public static final Pieces player2 = Pieces.O;
 
-    private static final int counts = 3;
-
     public TicTacToe() {
         createBoard();
     }   //Constructor
@@ -25,8 +23,8 @@ public class TicTacToe {
     //Creates 3x3 two-dimensional array for storing enum, and puts default value EMPTY
     public void createBoard() {
         boardArray = new Pieces[3][3];
-        for (int row = 0; row < counts; row++) {
-            for (int column = 0; column < counts; column++) {
+        for (int row = 0; row < 3; row++) {
+            for (int column = 0; column < 3; column++) {
                 boardArray[row][column] = Pieces.EMPTY;
             }
         }
