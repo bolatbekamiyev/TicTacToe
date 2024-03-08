@@ -25,6 +25,8 @@ public class Logic {
     //store second player's all move
     public final ArrayList<Integer> secondPlayerMove = new ArrayList<>();
 
+    private static final int counts = 10; //For loops
+
     SecureRandom random = new SecureRandom();  //for random values
     Scanner input = new Scanner(System.in);    //for user's keyboard values
     TicTacToe base = new TicTacToe();          //creates object of the class
@@ -151,7 +153,7 @@ public class Logic {
 
     //method implements game between two computers
     public void computersBattle() {
-        for (int i = 1; i < 10; i ++) {  //there are a maximum of 9 moves that can be made in the game, so the number of iterations is 9
+        for (int i = 1; i < counts; i ++) {  //there are a maximum of 9 moves that can be made in the game, so the number of iterations is 9
             if (i % 2 != 0) {            //on odd iterations, X will be place on the board
                 System.out.println("The first computer move!");
                 computerLogic(firstPlayerMove, secondPlayerMove, TicTacToe.player1);  //calls computer algorithm
@@ -190,7 +192,7 @@ public class Logic {
     //method do everything for playing game between friends
     public void playWithFriend() {
         base.createGrid();    //creates grid for game
-        for (int i = 1; i < 10; i ++) {  //there are a maximum of 9 moves that can be made in the game, so the number of iterations is 9
+        for (int i = 1; i < counts; i ++) {  //there are a maximum of 9 moves that can be made in the game, so the number of iterations is 9
             if (i % 2 != 0) {     //on odd iterations, X will be place on the board
                 playerLogic(firstPlayerMove, TicTacToe.player1);  //calls player algorithm
                 if (isSomeoneWon(firstPlayerMove)) {            //every iteration will check if someone won or not
@@ -219,7 +221,7 @@ public class Logic {
         userAnswer = input.next().toLowerCase();
         if (userAnswer.equals("y")) {  //if yes user goes first
             base.createGrid();    //creates grid for game
-            for (int i = 1; i < 10; i ++) {  //there are a maximum of 9 moves that can be made in the game, so the number of iterations is 9
+            for (int i = 1; i < counts; i ++) {  //there are a maximum of 9 moves that can be made in the game, so the number of iterations is 9
                 if (i % 2 != 0) {     //on odd iterations, X will be place on the board
                     playerLogic(firstPlayerMove, TicTacToe.player1);  //calls player's algorithm
                     if (isSomeoneWon(firstPlayerMove)) {  //every iteration will check if someone won or not
@@ -242,7 +244,7 @@ public class Logic {
             resetEverything(); //clean up after yourself
         }
         else if (userAnswer.equals("n")) {    //if no then computer goes first
-            for (int i = 1; i < 10; i ++) {  //there are a maximum of 9 moves that can be made in the game, so the number of iterations is 9
+            for (int i = 1; i < counts; i ++) {  //there are a maximum of 9 moves that can be made in the game, so the number of iterations is 9
                 if (i % 2 != 0) {
                     computerLogic(firstPlayerMove, secondPlayerMove, TicTacToe.player1);  //calls computer algorithm
                     base.createGrid(); //creates updated grid with values
