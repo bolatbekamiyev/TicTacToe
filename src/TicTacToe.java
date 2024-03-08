@@ -13,6 +13,8 @@ public class TicTacToe {
     public static final Pieces player1 = Pieces.X;    //First player will be use X
     public static final Pieces player2 = Pieces.O;
 
+    private static final int counts = 3; //For loops
+
     public TicTacToe() {
         createBoard();
     }   //Constructor
